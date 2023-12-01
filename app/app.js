@@ -29,7 +29,7 @@ const app = express();
 const home = require("./src/routes/home"); // 라우팅
 
 // 앱 세팅
-app.set("views", "./app/src/views");
+app.set("views", "./src/views");
 app.set('view engine', 'ejs');
 app.use(express.static(`${__dirname}/src/public`))
 
