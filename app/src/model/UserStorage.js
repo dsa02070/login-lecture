@@ -19,6 +19,11 @@ class UserStorage {
     }, {})
     return newUsers
   }
+
+  static getUsers(id){
+    const users = this.#users
+    return usersInfo 
+  }
 }
 
 module.exports = UserStorage
