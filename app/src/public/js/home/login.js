@@ -1,15 +1,15 @@
 "use strict";
 
 const id = document.querySelector("#id"), 
-psword = document.querySelector("#psword"),
+psword = document.querySelector("#pw"),
 loginbtn = document.querySelector("#loginbtn");
 
-console.log(id, psword, loginbtn);
+// console.log(id, psword, loginbtn);
 
 const login = (e) => {
   const req = {
     id: id.value,
-    psword: psword.value
+    pw: psword.value
   };
   console.log(req);
 
@@ -20,6 +20,15 @@ const login = (e) => {
     },
     body : JSON.stringify(req)
   })
+  .then(res => res.json())
+  .then(res => {
+    if(res.success){
+      location.href = "/";
+    } else {
+      alert(res.msg);
+    }
+  })
+  .catch(err => {});
 }
 
 loginbtn.addEventListener("click", login);
