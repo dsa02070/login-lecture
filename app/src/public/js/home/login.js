@@ -13,7 +13,13 @@ const login = (e) => {
   };
   console.log(req);
 
-  // fetch()
+  fetch('/login', {
+    method: "POST",
+    headers: {
+      "content-type" : "application/json"
+    },
+    body : JSON.stringify(req)
+  })
 }
 
 loginbtn.addEventListener("click", login);
