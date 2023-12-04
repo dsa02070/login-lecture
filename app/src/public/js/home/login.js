@@ -28,7 +28,9 @@ const login = (e) => {
       alert(res.msg);
     }
   })
-  .catch(err => {});
+  .catch(err => {
+    console.log(new Error(err));
+  });
 }
 
 loginbtn.addEventListener("click", login);
